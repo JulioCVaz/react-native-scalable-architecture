@@ -1,0 +1,58 @@
+{
+  "testRunner": "jest",
+  "runnerConfig": "jest.config.json",
+  "apps": {
+    "ios.debug": {
+      "type": "ios.app",
+      "build": "cd ../tomioka/ios && xcodebuild -workspace Tomioka.xcworkspace -scheme Tomioka -configuration Debug -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 13' -derivedDataPath ./build -quiet",
+      "binaryPath": "../tomioka/ios/build/Build/Products/Debug-iphonesimulator/Tomioka.app"
+    },
+    "ios.release": {
+      "type": "ios.app",
+      "build": "cd ../tomioka/ios && xcodebuild -workspace Tomioka.xcworkspace -scheme Tomioka -configuration Release -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 13' -derivedDataPath ./build -quiet",
+      "binaryPath": "../tomioka/ios/build/Build/Products/Release-iphonesimulator/Tomioka.app"
+    },
+    "android.debug": {
+      "type": "android.apk",
+      "build": "cd ../tomioka/android && ./gradlew assembleDebug assembleAndroidTest -DtestBuildType=debug",
+      "binaryPath": "../tomioka/android/app/build/outputs/apk/debug/app-debug.apk"
+    },
+    "android.release": {
+      "type": "android.apk",
+      "build": "cd ../tomioka/android && ./gradlew assembleRelease assembleAndroidTest -DtestBuildType=release",
+      "binaryPath": "../tomioka/android/app/build/outputs/apk/release/app-release.apk"
+    }
+  },
+  "devices": {
+    "simulator": {
+      "type": "ios.simulator",
+      "device": {
+        "type": "iPhone 13"
+      }
+    },
+    "emulator": {
+      "type": "android.emulator",
+      "device": {
+        "avdName": "Pixel_4a_API_30"
+      }
+    }
+  },
+  "configurations": {
+    "ios.sim.release": {
+      "device": "simulator",
+      "app": "ios.release"
+    },
+    "ios.sim.debug": {
+      "device": "simulator",
+      "app": "ios.debug"
+    },
+    "android.emu.release": {
+      "device": "emulator",
+      "app": "android.release"
+    },
+    "android.emu.debug": {
+      "device": "emulator",
+      "app": "android.debug"
+    }
+  }
+}

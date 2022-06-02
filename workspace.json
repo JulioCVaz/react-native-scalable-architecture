@@ -3,6 +3,8 @@
   "version": 2,
   "projects": {
     "hashira": "apps/hashira",
-    "hashira-e2e": "apps/hashira-e2e"
+    "hashira-e2e": "apps/hashira-e2e",
+    "tomioka": "apps/tomioka",
+    "tomioka-e2e": "apps/tomioka-e2e"
   }
 }
