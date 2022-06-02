@@ -9,4 +9,4 @@ let codePushOptions = {
 
 let HashiraApp: () => FunctionComponent = () => CodePush(codePushOptions)(App);
 
-AppRegistry.registerComponent('Hashira', CodePush(codePushOptions)(HashiraApp));
+AppRegistry.registerComponent('Hashira', HashiraApp);
