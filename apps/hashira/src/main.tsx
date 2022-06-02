@@ -1,12 +1,9 @@
 import { FunctionComponent } from 'react';
 import { AppRegistry } from 'react-native';
-import CodePush from 'react-native-code-push';
+import { CodePushConfig } from '@react-native-scalable-architecture/codepush';
+
 import App from './app/App';
 
-let codePushOptions = {
-  checkFrequency: CodePush.CheckFrequency.ON_APP_RESUME,
-};
-
-let HashiraApp: () => FunctionComponent = () => CodePush(codePushOptions)(App);
+let HashiraApp: () => FunctionComponent = () => CodePushConfig(App);
 
 AppRegistry.registerComponent('Hashira', HashiraApp);
