@@ -1,12 +1,9 @@
 import { FunctionComponent } from 'react';
 import { AppRegistry } from 'react-native';
-import CodePush from 'react-native-code-push';
+import { CodePushConfig } from '@react-native-scalable-architecture/codepush';
+
 import App from './app/App';
 
-let codePushOptions = {
-  checkFrequency: CodePush.CheckFrequency.ON_APP_RESUME,
-};
-
-let TomiokaApp: () => FunctionComponent = () => CodePush(codePushOptions)(App);
+let TomiokaApp: () => FunctionComponent = () => CodePushConfig(App);
 
 AppRegistry.registerComponent('Tomioka', TomiokaApp);
