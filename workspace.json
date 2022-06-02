@@ -2,6 +2,7 @@
   "$schema": "./node_modules/nx/schemas/workspace-schema.json",
   "version": 2,
   "projects": {
+    "codepush": "libs/codepush",
     "hashira": "apps/hashira",
     "hashira-e2e": "apps/hashira-e2e",
     "tomioka": "apps/tomioka",
